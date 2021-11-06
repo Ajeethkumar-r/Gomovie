@@ -1,34 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './navbar.scss';
-import '@material-ui/core';
-import '@material-ui/icons';
 import { ArrowDropDown, Notifications, Search } from '@material-ui/icons';
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  window.onscroll = () => {
+    setScrolled(window.pageYOffset === 0 ? false : true);
+
+    return () => window.onscroll === null;
+  };
+
   return (
-    <div className='navbar'>
+    <div className={scrolled ? 'navbar__scroll' : 'navbar'}>
       <div className='container'>
         <div className='left'>
           <img
-            src='
-            https://imgr.search.brave.com/GAWh4mkxAqNHCWfLj8fk1bdTbAlBGEfMVERXQuNzJpg/fit/1200/562/ce/1/aHR0cHM6Ly93d3cu/cGluY2xpcGFydC5j/b20vcGljZGlyL2Jp/Zy8yLTIzMjM2X3Ry/YW5zcGFyZW50LW5l/dGZsaXgtbG9nby0y/MDE4LWNsaXBhcnQu/cG5n'
+            src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png'
             alt=''
-            style={{
-              height: '25px',
-            }}
           />
           <span>Homepage</span>
-          <span>Movies</span>
           <span>Series</span>
+          <span>Movies</span>
           <span>New and Popular</span>
           <span>My List</span>
         </div>
         <div className='right'>
-          <Search />
+          <Search className='icon' />
           <span>KID</span>
-          <Notifications />
-          <img src='' alt='' />
-          <ArrowDropDown />
+          <Notifications className='icon' />
+          <img
+            src='https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+            alt=''
+          />
+          <div className='profile'>
+            <ArrowDropDown className='icon' />
+            <div className='options'>
+              <span>Settings</span>
+              <span>Logout</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
