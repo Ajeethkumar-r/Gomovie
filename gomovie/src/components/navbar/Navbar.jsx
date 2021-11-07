@@ -3,16 +3,14 @@ import './navbar.scss';
 import { ArrowDropDown, Notifications, Search } from '@material-ui/icons';
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
-
+  const [isScrolled, setIsScrolled] = useState(false);
   window.onscroll = () => {
-    setScrolled(window.pageYOffset === 0 ? false : true);
-
+    setIsScrolled(window.pageYOffset === 0 ? false : true);
     return () => window.onscroll === null;
   };
 
   return (
-    <div className={scrolled ? 'navbar__scroll' : 'navbar'}>
+    <div className={isScrolled ? 'navbar scrolled' : 'navbar'}>
       <div className='container'>
         <div className='left'>
           <img
