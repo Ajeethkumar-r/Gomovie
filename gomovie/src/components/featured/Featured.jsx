@@ -27,7 +27,7 @@ export default function Featured({ type }) {
         </div>
       )}
       <img
-        src='https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+        src='https://imgr.search.brave.com/M88gstvXvDbji4Qlrs3Bae0YC0D2j9eY2IGu760THiQ/fit/1200/1200/ce/1/aHR0cHM6Ly93d3cu/aGR3YWxscGFwZXJz/LmluL2Rvd25sb2Fk/L3ZpamF5X2luX3Nh/cmthcl9tb3ZpZV80/ay1IRC5qcGc'
         alt=''
       />
       <div className='info'>
