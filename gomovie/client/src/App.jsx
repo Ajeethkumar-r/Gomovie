@@ -7,7 +7,7 @@ import Login from './pages/login/Login';
 const App = () => {
   return (
     <div>
-      <Login />
+      <Home />
     </div>
   );
 };
